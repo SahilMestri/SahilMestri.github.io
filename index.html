@@ -332,7 +332,7 @@ reporting.
 you reach your goals. Reach out today to start the conversation.
           </p>
 
-          <form id="contactForm" class="contact-form" >
+          <form class="contact-form" action="https://fabform.io/f/lmWJ0DQ" method="post">
             <div class="input-wrapper">
               <input type="text" name="name" aria-label="name" placeholder="Your name*" required class="input-field">
               <input type="email" name="email_address" aria-label="email" placeholder="Email address*" required class="input-field">
@@ -349,7 +349,8 @@ you reach your goals. Reach out today to start the conversation.
           
             <textarea name="message" aria-label="message" placeholder="Your message...*" required class="input-field"></textarea>
           
-            <button type="button" id="sendMessageButton" class="btn btn-primary">Send Message</button>
+            <!-- <button type="submit" id="sendMessageButton" class="btn btn-primary">Send Message</button> -->
+            <input type="submit" value="Submit" id="sendMessageButton" class="btn btn-primary">
           </form>
           <a id="whatsappLink" href="" target="_blank" style="display: none;">Click to send to WhatsApp</a>
           
@@ -388,7 +389,7 @@ you reach your goals. Reach out today to start the conversation.
 
                   <h3 class="h3 card-title">Call Here</h3>
 
-                  <a href="tel:+1234567890" class="card-link">+91 9371232425</a>
+                  <a href="tel:+919579232425" class="card-link">+91 9579232425</a>
                  
 
                 </div>
@@ -468,8 +469,8 @@ you reach your goals. Reach out today to start the conversation.
       // URL encode the message
       var encodedMessage = encodeURIComponent(whatsappMessage);
   
-      // Fixed phone number (9371232425)
-      var phoneNumber = "9371232425"; // This is the fixed WhatsApp number
+      // Fixed phone number (9579232425)
+      var phoneNumber = "9579232425"; // This is the fixed WhatsApp number
   
       // Create the WhatsApp link
       var whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
