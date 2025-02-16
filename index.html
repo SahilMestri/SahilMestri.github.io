@@ -6,6 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Triber Digital Marketing</title>
+  <style>
+    .honeypot {
+        display: none;
+    }
+</style>
 
   <!-- 
     - favicon
@@ -350,6 +355,11 @@ you reach your goals. Reach out today to start the conversation.
             <textarea name="message" aria-label="message" placeholder="Your message...*" required class="input-field"></textarea>
           
             <!-- <button type="submit" id="sendMessageButton" class="btn btn-primary">Send Message</button> -->
+            <div class="honeypot">
+              <label for="honeypot">Leave this field empty:</label>
+              <input type="text" id="honeypot" name="honeypot">
+          </div>
+  
             <input type="submit" value="Submit" id="sendMessageButton" class="btn btn-primary">
           </form>
           <a id="whatsappLink" href="" target="_blank" style="display: none;">Click to send to WhatsApp</a>
@@ -441,45 +451,22 @@ you reach your goals. Reach out today to start the conversation.
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
+<script src="https://fabform.io/js/fabform.js"></script>
+<script>
+        document.addEventListener('DOMContentLoaded', function() {
+            Fabform.init({
+                beforeSubmit: function(formData) {
+                    // Check honeypot field before submitting
+                    if (formData.honeypot) {
+                        console.log('Bot detected.');
+                        return false; // Prevent form submission
+                    }
+                    return true; // Allow form submission
+                }
+            });
+        });
+    </script>
+  
 </body>
 
 </html>
-<script>
-  document.getElementById("contactForm").addEventListener("submit", function(event) {
-      event.preventDefault(); // Prevent the form from submitting normally
-  
-      // Get form values
-      var name = document.getElementById("name").value;
-      var email = document.getElementById("email_address").value;
-      var company = document.getElementById("company_name").value || "Not provided";
-      var phone = document.getElementById("phone").value || "Not provided";
-      var services = document.getElementById("services_interested").value;
-      var message = document.getElementById("message").value;
-  
-      // Create the message to send
-      var whatsappMessage = `New Contact Form Submission:
-  
-  Name: ${name}
-  Email: ${email}
-  Company: ${company}
-  Phone: ${phone}
-  Services Interested: ${services}
-  Message: ${message}`;
-  
-      // URL encode the message
-      var encodedMessage = encodeURIComponent(whatsappMessage);
-  
-      // Fixed phone number (9579232425)
-      var phoneNumber = "9579232425"; // This is the fixed WhatsApp number
-  
-      // Create the WhatsApp link
-      var whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-  
-      // Show the WhatsApp link
-      var whatsappLink = document.getElementById("whatsappLink");
-      whatsappLink.href = whatsappUrl;
-      whatsappLink.style.display = "inline"; // Display the link after form submission
-  
-  });
-  </script>
-  
