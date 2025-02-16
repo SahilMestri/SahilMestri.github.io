@@ -6,11 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Triber Digital Marketing</title>
-  <style>
-    .honeypot {
-        display: none;
-    }
-</style>
 
   <!-- 
     - favicon
@@ -337,7 +332,7 @@ reporting.
 you reach your goals. Reach out today to start the conversation.
           </p>
 
-          <form class="contact-form" action="https://fabform.io/f/lmWJ0DQ" method="post">
+          <form class="contact-form" action="https://fabform.io/f/lmWJ0DQ" method="post" >
             <div class="input-wrapper">
               <input type="text" name="name" aria-label="name" placeholder="Your name*" required class="input-field">
               <input type="email" name="email_address" aria-label="email" placeholder="Email address*" required class="input-field">
@@ -355,10 +350,7 @@ you reach your goals. Reach out today to start the conversation.
             <textarea name="message" aria-label="message" placeholder="Your message...*" required class="input-field"></textarea>
           
             <!-- <button type="submit" id="sendMessageButton" class="btn btn-primary">Send Message</button> -->
-            <div class="honeypot">
-              <label for="honeypot">Leave this field empty:</label>
-              <input type="text" id="honeypot" name="honeypot">
-          </div>
+          
   
             <input type="submit" value="Submit" id="sendMessageButton" class="btn btn-primary">
           </form>
@@ -451,21 +443,6 @@ you reach your goals. Reach out today to start the conversation.
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-<script src="https://fabform.io/js/fabform.js"></script>
-<script>
-        document.addEventListener('DOMContentLoaded', function() {
-            Fabform.init({
-                beforeSubmit: function(formData) {
-                    // Check honeypot field before submitting
-                    if (formData.honeypot) {
-                        console.log('Bot detected.');
-                        return false; // Prevent form submission
-                    }
-                    return true; // Allow form submission
-                }
-            });
-        });
-    </script>
   
 </body>
 
